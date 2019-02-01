@@ -95,7 +95,7 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
 
-   // Had help form a tutor on this method - I also had another method/idea to test 
+   // CITE - TUTOR: Had help from a tutor on this method - I also had another method/idea to test 
    // IF a year was a leap year AND also if the month was February then by looking at the 
    // private static int[] days  = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; 
    // February would be int[2] days which = 28, and becasue its also leap year + 1 ((int[]days) + 1).
@@ -281,9 +281,9 @@ public class CalendarStuff {
     
       if(!isValidDate(month1,day1,year1) || !isValidDate(month2,day2,year2)){
          return -1;
-      } by using the past method isValidDate; if date1 or date2 is invalid then returns -1
+      } // by using the past method isValidDate; if date1 or date2 is invalid then returns -1
 
-        Calendar cal1 = new GregorianCalendar(); // taught to me by my tutor - cal1 and cal2 are dates set/formatted to the function of GregorianCalendar
+        Calendar cal1 = new GregorianCalendar(); // CITE - TUTOR: taught to me by my tutor - cal1 and cal2 are dates set/formatted to the function of GregorianCalendar
         Calendar cal2 = new GregorianCalendar();
 
         cal1.set((int)year1,(int) month1,(int) day1); // date1 and date2 are implementted/re-formatted to the Calendar
