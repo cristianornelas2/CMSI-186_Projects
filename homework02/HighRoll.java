@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
-public class HighRoll{
+public class HighRoll{  // had some help with a tutor but a majority of the concepts/code came from myself
     public static void main(String [] args){
         int numOfArg = args.length;
         if(numOfArg != 2) {
