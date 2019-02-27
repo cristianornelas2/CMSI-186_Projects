@@ -101,6 +101,7 @@ public class ClockSolver {
       //System.out.println( "  Creating a new clock: " );
       //Clock clock = new Clock(1.0);
       while(clk.getTotalSeconds() <= 43200){
+       clk.tick();
         double diff = Math.abs(clk.getHandAngle() - targetAngle);
         if(diff <= EPSILON_VALUE){
           System.out.println("Angle between hour and minute hands = " + clk.getHandAngle());
@@ -108,7 +109,6 @@ public class ClockSolver {
            System.out.println("The time at the angle  " + targetAngle + " is " + clk.toString());
         }
         //System.out.println(diff + " : " + clock.getHandAngle() + " : " + clock.toString());
-        clk.tick();
       }
       //while(clk.getTotalSeconds() <= 43200) {
       //double ta = 
