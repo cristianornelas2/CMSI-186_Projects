@@ -63,12 +63,12 @@ public class ClockSolver {
       targetAngle = Double.parseDouble(args[0]);
       timeSlice = Double.parseDouble(args[1]);
      } 
-     if(targetAngle < 0){
-      System.out.println( "   Sorry you must enter a positive target angle\n");
+     if(targetAngle < 0 || targetAngle > 359){
+      System.out.println( "   Sorry you must enter a positive target angle less than 360\n");
       System.exit(1);
      }
-     if(timeSlice <= 0){
-      System.out.println( "   Sorry you must enter a positive non-zero time slice\n");
+     if(timeSlice <= 0 || timeSlice > 1799){
+      System.out.println( "   Sorry you must enter a positive non-zero time slice less then 1800\n");
       System.exit(1);
      }
    }
