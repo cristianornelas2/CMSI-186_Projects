@@ -27,12 +27,9 @@ public class Clock {
    private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
    private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
    public static  double totalSeconds = 0;
-   public static  double totalMinutes = 0;
-   public static  double totalHours = 0;
    public static  double timeSlice = 0;
    public static  double targetAngle = 0;
    public static  double hourHand = 0;
-   public static  double minuteHand = 0;
 
 
 
