@@ -40,6 +40,21 @@ public class Clock {
     this.timeSlice = timeSlice;
    }
   
+  // public Clock() {
+   //   targetAngle = 180;
+   //   timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
+   // }
+
+   // public Clock(double angle) {
+   //   targetAngle = angle;
+   //   timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
+   // }
+
+   // public Clock(double angle, double timeSlice) {
+   //   targetAngle = angle;
+   //   this.timeSlice = timeSlice;
+   // }
+  
   /**
    *  Methods go here
    *
@@ -161,7 +176,7 @@ public class Clock {
       System.out.println( "\nCLOCK CLASS TESTER PROGRAM\n" +
                           "--------------------------\n" );
       System.out.println( "  Creating a new clock: " );
-      Clock clock = new Clock(1800.0);
+      Clock clock = new Clock(120.0);
       /*while(clock.getTotalSeconds() <= 43200){
         double diff = Math.abs(clock.getHandAngle() - targetAngle);
         if(diff <= 0.1000)
