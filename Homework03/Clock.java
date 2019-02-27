@@ -26,10 +26,10 @@ public class Clock {
    private static final double MAXIMUM_DEGREE_VALUE = 360.0;
    private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
    private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
-   public static  double totalSeconds = 0;
-   public static  double timeSlice = 0;
-   public static  double targetAngle = 0;
-   public static  double hourHand = 0;
+   private static  double totalSeconds = 0;
+   private static  double timeSlice = 0;
+   private static  double targetAngle = 0;
+   private static  double hourHand = 0;
 
 
 
@@ -161,7 +161,7 @@ public class Clock {
       System.out.println( "\nCLOCK CLASS TESTER PROGRAM\n" +
                           "--------------------------\n" );
       System.out.println( "  Creating a new clock: " );
-      Clock clock = new Clock(1.0);
+      Clock clock = new Clock(1800.0);
       /*while(clock.getTotalSeconds() <= 43200){
         double diff = Math.abs(clock.getHandAngle() - targetAngle);
         if(diff <= 0.1000)
@@ -169,6 +169,7 @@ public class Clock {
         clock.tick();
       }
       */
+
       System.out.println( "    New clock created: " + clock.toString() );
       System.out.println( "    Testing validateAngleArg()....");
       System.out.print( "      sending '  0 degrees', expecting double value   0.0" );
@@ -182,9 +183,9 @@ public class Clock {
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
       try { System.out.println( (359 == clock.validateAngleArg( "359" )) ? " 359 is valid angle arg" : " 359 is invalid angle arg" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-      try { System.out.println( (361 == clock.validateAngleArg( "361" )) ? " 361 is valid angle arg" : " 361 is invalid angle arg" ); }
+      try { System.out.println( (360 == clock.validateAngleArg( "360" )) ? " 360 is valid angle arg" : " 360 is invalid angle arg" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-      try { System.out.println( (3025 == clock.validateAngleArg( "3025" )) ? " 3025 is valid angle arg" : " 3025 is invalid angle arg" ); }
+      try { System.out.println( (3025 == clock.validateAngleArg( "2005" )) ? " 3025 is valid angle arg" : " 3025 is invalid angle arg" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
       try { System.out.println( (-2 == clock.validateAngleArg( "-2" )) ? " -2 is valid angle arg" : " -2 is invalid angle arg" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
@@ -198,11 +199,12 @@ public class Clock {
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
       try { System.out.println( (-1 == clock.validateTimeSliceArg("abc") ) ? " abc is valid time slice" : " abc is invalid time slice" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-
-      System.out.println(clock.getHourHandAngle());
-      System.out.println(clock.getMinuteHandAngle());
-      System.out.println(clock.getHandAngle());
-      System.out.println(clock.toString());
+      System.out.println("Clock Tick = " + clock.tick());
+      System.out.println("Clock Hour Hand Angle = " + clock.getHourHandAngle());
+      System.out.println("Clock Minute Hand Angle = " + clock.getMinuteHandAngle());
+      System.out.println("Clock Hand Angle = " + clock.getHandAngle());
+      System.out.println("Clock Seconds = " + clock.getTotalSeconds());
+      System.out.println("Analog Clock Time = " + clock.toString());
    
    }
 }
