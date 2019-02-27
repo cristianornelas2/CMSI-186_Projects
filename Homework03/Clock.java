@@ -185,7 +185,7 @@ public class Clock {
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
       try { System.out.println( (25 == clock.validateAngleArg( "25" )) ? " 25 is valid angle arg" : " 25 is invalid angle arg" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-      try { System.out.println( (87 == clock.validateAngleArg( "87" )) ? " 87 is valid angle arg" : " 87 is invali angle argd" ); }
+      try { System.out.println( (87 == clock.validateAngleArg( "87" )) ? " 87 is valid angle arg" : " 87 is invalid angle arg" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
       try { System.out.println( (3025 == clock.validateAngleArg( "2005" )) ? " 3025 is valid angle arg" : " 3025 is invalid angle arg" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
