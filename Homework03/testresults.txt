@@ -1,0 +1,123 @@
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new clock: 
+    New clock created: 00:00:0.000
+    Testing validateAngleArg()....
+      sending '  0 degrees', expecting double value   0.0 - Exception thrown: java.lang.NumberFormatException
+0.0
+ 80 is valid angle arg
+ 25 is valid angle arg
+ 359 is valid angle arg
+ - Exception thrown: java.lang.NumberFormatException
+ - Exception thrown: java.lang.NumberFormatException
+ - Exception thrown: java.lang.NumberFormatException
+ - Exception thrown: java.lang.NumberFormatException
+ -9 is invalid time slice
+ 1799 is valid time slice
+ 1801 is invalid time slice
+ - Exception thrown: java.lang.NumberFormatException: For input string: "abc"
+Clock Tick = 120.0
+Clock Hour Hand Angle = 1.0008
+Clock Minute Hand Angle = 12.0
+Clock Hand Angle = 10.9992
+Clock Seconds = 120.0
+Analog Clock Time = 00:02:0.000
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter at least one argument
+   Usage: java ClockSolver <angle> [timeSlice]
+   Please try again...........
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter a positive target angle less than 360
+
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter a positive non-zero time slice less then 1800
+
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter a positive non-zero time slice less then 1800
+
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter a positive target angle less than 360
+
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter a positive non-zero time slice less then 1800
+
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+Angle between hour and minute hands = 29.972820000000002
+hour Hand Angle = 2.72718
+The time at the angle  30.0 is 00:05:27.000
+Angle between hour and minute hands = 30.064480000000003
+hour Hand Angle = 2.73552
+The time at the angle  30.0 is 00:05:28.000
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+
+   Hello world, from the ClockSolver program!!
+
+
+Angle between hour and minute hands = 75.18869799999929
+hour Hand Angle = 6.841301999999936
+The time at the angle  75.23 is 00:13:40.000
+Angle between hour and minute hands = 75.30785599999929
+hour Hand Angle = 6.852143999999936
+The time at the angle  75.23 is 00:13:41.000
+
+   Hello world, from the ClockSolver program!!
+
+
+Angle between hour and minute hands = 90.05595
+hour Hand Angle = 8.19405
+The time at the angle  90.0 is 00:16:22.000
+
+   Hello world, from the ClockSolver program!!
+
+
+Angle between hour and minute hands = 180.00190799999686
+hour Hand Angle = 16.378091999999715
+The time at the angle  180.0 is 00:32:43.000
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter a positive non-zero time slice less then 1800
+
