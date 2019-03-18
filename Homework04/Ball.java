@@ -108,17 +108,9 @@ public static void main(String args[]) {
     catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
     try { System.out.println( (10 == ball.yballVelo) ? " move() for Y-Velocity working as intended" : " move() not working" ); }
     catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-    ball.move();
-    System.out.println("Current: " + ball.toString());
-    try { System.out.println( (3.98 == ball.xball) ? " move() for X-val working as intended" : " move() not working" ); }
+    try { System.out.println( (1 == ball.timeSlice) ? " move() for timeSlice working as intended" : " move() not working" ); }
     catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-    try { System.out.println( (3.98 == ball.yball) ? " move() for Y-val working as intended" : " move() not working" ); }
-    catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-    try { System.out.println( (1.9602 == ball.xballVelo) ? " move() for X-Velocity working as intended" : " move() not working" ); }
-    catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-    try { System.out.println( (1.9602 == ball.yballVelo) ? " move() for Y-Velocity working as intended" : " move() not working" ); }
-    catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-  }
+}
 }
 
 
