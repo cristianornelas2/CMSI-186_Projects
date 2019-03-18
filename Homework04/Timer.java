@@ -77,6 +77,7 @@
       
       	return (hh + ":" + mm + ":" + zz);
   }
+}
 
   public static void main(String[] args) {
 
@@ -91,4 +92,3 @@
       }
       System.out.println(timer.getTotalSeconds());
   }
-}
