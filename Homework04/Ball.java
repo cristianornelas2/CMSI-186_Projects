@@ -80,10 +80,10 @@ public void move() {
    yball += yballVelo;
    xballVelo = xballVelo - ((xballVelo * FRICTION_PERCENT) * timeSlice);
    yballVelo = yballVelo - ((yballVelo * FRICTION_PERCENT) * timeSlice);
-   if ((Math.abs(xballVelo) * 12) <= 1){
+   if ((Math.abs(xballVelo) * 10) <= 1){
       xballVelo = 0;
    }
-   if ((Math.abs(yballVelo) * 12) <= 1) {
+   if ((Math.abs(yballVelo) * 10) <= 1) {
       yballVelo = 0;
    }
 }
