@@ -54,10 +54,10 @@ int h = 0;
 
 public void validateLocation() {
 	for(Ball ball : ballsArr) {
-		if (ball.getXLocation() > SECTION_1_WIDTH || ball.getYLocation() < SECTION_2_HEIGHT) {
+		if (ball.getXLocation() > SECTION_1_WIDTH || ball.getXLocation() < SECTION_3_WIDTH) {
 			throw new IllegalArgumentException();
 		}
-		if (ball.getXVelocity() > SECTION_3_WIDTH || ball.getYVelocity() < SECTION_4_HEIGHT) {
+		if (ball.getYLocation() > SECTION_2_HEIGHT || ball.getYLocation() < SECTION_4_HEIGHT) {
 			throw new IllegalArgumentException();
 		}
 	}
@@ -65,10 +65,10 @@ public void validateLocation() {
 
 public void validateVelocity() {
 	for(Ball ball : ballsArr) {
-		if (ball.getXLocation() > SECTION_1_WIDTH || ball.getYLocation() < SECTION_2_HEIGHT) {
+		if (ball.getXVelocity() > SECTION_1_WIDTH || ball.getXVelocity() < SECTION_3_WIDTH) {
 			throw new IllegalArgumentException();
 		}
-		if (ball.getXVelocity() > SECTION_3_WIDTH || ball.getYVelocity() < SECTION_4_HEIGHT) {
+		if (ball.getYVelocity() > SECTION_2_HEIGHT || ball.getYVelocity() < SECTION_4_HEIGHT) {
 			throw new IllegalArgumentException();
 		}
 	}
@@ -137,11 +137,10 @@ for(Ball ball : soccersim.ballsArr) {
 System.out.println(timer);
 System.out.println(soccersim);
       }
-if(!soccersim.Collisions) {
+if(!soccersim.collision) {
 System.out.println("NO COLLISION POSSIBLE");
       }
     }
 catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
   }
-
 }
