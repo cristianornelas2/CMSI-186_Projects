@@ -4,7 +4,7 @@
  *  @author       :  Cristian R. Ornelas
  *  Date written  :  2019-03-06
  *  Description   :  This class provides a bunch of methods which may be useful for the SoccerSim class
- *                   for Homework 4 
+ *                   for Homework 4  Includes the following:
  *
  *  Notes         :  None right now.  I'll add some as they occur.
  *  Warnings      :  None
@@ -26,7 +26,8 @@
    	timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
    }  
 
-   public Timer (double timeSlice) {
+   public Timer (double
+    timeSlice) {
     this.timeSlice = timeSlice;
    }
 
