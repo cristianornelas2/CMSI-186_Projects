@@ -19,35 +19,35 @@ private final double SECTION_1_WIDTH = 500;
 private final double SECTION_2_HEIGHT = 500;
 private final double SECTION_3_WIDTH = -500;
 private final double SECTION_4_HEIGHT = -500;
-public final static double X_POLE = 100;
-public final static double Y_POLE = -25;
-
-
+public final static double X_POLE = 250;
+public final static double Y_POLE = -100;
 public int numberofballs;
 private Ball[] ballsArr;
 public double timeSlice;
 public boolean collision = false;
 
+
 public SoccerSim (String args[]) {
 	numberofballs = (int)(args.length / 4);
 if (args.length % 4 == 1) {
-	timeSlice = Double.parseDouble(args[args.length-1]);
+	this.timeSlice = Double.parseDouble(args[args.length-1]);
 }
 else if (args.length % 4 == 0) {
-	timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
+	this.timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
 }
 else {
+	System.out.println("There are not enough arguments to complete a new ball");
 	throw new IllegalArgumentException();
 }
 
 ballsArr = new Ball[numberofballs];
 int h = 0;
- for (int i = 0; i < args.length-1 ; i+= 4) {
+ for (int i = 0; i < args.length - 1 ; i+= 4) {
  	double xPosition = Double.parseDouble(args[i+0]);
  	double yPosition = Double.parseDouble(args[i+1]);
  	double xVelocity = Double.parseDouble(args[i+2]);
  	double yVelocity = Double.parseDouble(args[i+3]);
- 	ballsArr[h] = new Ball(xPosition, yPosition, xVelocity, yVelocity, timeSlice);
+ 	ballsArr[h] = new Ball(xPosition, yPosition, xVelocity, yVelocity, this.timeSlice);
  	h++;
  }
 }
@@ -55,9 +55,11 @@ int h = 0;
 public void validateLocation() {
 	for(Ball ball : ballsArr) {
 		if (ball.getXLocation() > SECTION_1_WIDTH || ball.getXLocation() < SECTION_3_WIDTH) {
+			System.out.println("The ball(s) X Location is not on the dimensions of the field");
 			throw new IllegalArgumentException();
 		}
 		if (ball.getYLocation() > SECTION_2_HEIGHT || ball.getYLocation() < SECTION_4_HEIGHT) {
+			System.out.println("The ball(s) Y Location is not on the dimensions of the field");
 			throw new IllegalArgumentException();
 		}
 	}
@@ -87,7 +89,7 @@ return true;
 public boolean Collisions() {
 int count = 1;
 for(Ball ball : ballsArr) {
-if(Math.sqrt(Math.pow(X_POLE - ball.getXLocation(),2) + (Math.pow(Y_POLE - ball.getYLocation(), 2))) < Ball.RADIUS_IN_INCHES) {
+if(Math.sqrt(Math.pow(X_POLE - ball.getXLocation(),2) + (Math.pow(Y_POLE - ball.getYLocation(), 2))) < ball.RADIUS_IN_INCHES) {
 System.out.println("There has been a collision with - Ball " + count + "at [" + ball.getXLocation() + "," + ball.getYLocation() + "]");
        collision = true;
 return true;
