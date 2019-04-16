@@ -1,3 +1,12 @@
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * File name  :  Collatz.java
+ * Purpose    :  Test Harness for the BrobInt java class
+ * @author    :  Cristian R. Ornelas
+ * Date       :  2019-04-15
+ * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
+ * Notes      :  Had a lot of help and hours with my online tutor for this one - most difficult assignment yet but gladly got through it.
+ * Warnings   :  None
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import java.io.*; 
 
 public class Collatz {
