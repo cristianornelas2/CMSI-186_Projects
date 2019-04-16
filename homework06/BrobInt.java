@@ -1,5 +1,13 @@
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * File name  :  BrobIntTester.java
+ * Purpose    :  Test Harness for the BrobInt java class
+ * @author    :  Cristian R. Ornelas
+ * Date       :  2019-04-15
+ * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
+ * Notes      :  Had a lot of help and hours with my online tutor for this one - most difficult assignment yet but gladly got through it.
+ * Warnings   :  None
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import java.util.Arrays;
-
 
 public class BrobInt {
 
@@ -45,27 +53,27 @@ public class BrobInt {
   *  note also that this must check for the '+' and '-' sign digits
   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public byte[] validateDigits( String internalString) {
-    int startOfNumber = 0;
+    int beginningNumber = 0;
     byte[] byteArray = new byte[internalValue.length() + 1];
 
-    while (((int) internalString.charAt(startOfNumber) < (int) '0' || (int) internalString.charAt(startOfNumber) > (int) '9')) {
-      startOfNumber += 1;
+    while (((int) internalString.charAt(beginningNumber) < (int) '0' || (int) internalString.charAt(beginningNumber) > (int) '9')) {
+      beginningNumber += 1;
     }
     for (int i = 0; i < internalString.length(); i++) {
       if ((int) internalString.charAt(i) < (int) '0' || (int) internalString.charAt(i) > (int) '9') {
-        if (((int) internalString.charAt(i) != (int) '-' && (int) internalString.charAt(i) != (int) '+') || i != startOfNumber - 1) {
+        if (((int) internalString.charAt(i) != (int) '-' && (int) internalString.charAt(i) != (int) '+') || i != beginningNumber - 1) {
           throw new IllegalArgumentException("Input contains at least one non-numeric input OR a misplaced sign.");
         }
       }
-      if (startOfNumber != 0) {
-        if (internalString.charAt(startOfNumber - 1) == '-') {
+      if (beginningNumber != 0) {
+        if (internalString.charAt(beginningNumber - 1) == '-') {
           this.sign = 1;
         } else {
           this.sign = 0;
         }
       }
 
-      if (this.sign == 1 && i == startOfNumber - 1) {
+      if (this.sign == 1 && i == beginningNumber - 1) {
         byteArray[i + 1] = (byte) 0;
       } else {
         byteArray[i + 1] = (byte) ((int) internalString.charAt(i) - 48);
@@ -87,21 +95,22 @@ public class BrobInt {
   *  @param  gint  BrobInt to add to this
   *  @return int   that is one of neg/0/pos if this BrobInt lessThan/equals/greaterThan the argument
   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
   public int compareTo( BrobInt gint ) {
     byte byteVersionLengthThis = 0;
     byte byteVersionLengthGint = 0;
-    int hasHit = 0;
+    int beenHit = 0;
+    
     for (int i = 0; i < this.byteVersion.length; i++) {
-      if (this.byteVersion[i] > 0 || hasHit == 1) {
-        hasHit = 1;
+      if (this.byteVersion[i] > 0 || beenHit == 1) {
+        beenHit = 1;
         byteVersionLengthThis += 1;
       }
     }
-    hasHit = 0;
+    
+    beenHit = 0;
     for (int i = 0; i < gint.byteVersion.length; i++) {
-      if (gint.byteVersion[i] > 0 || hasHit == 1) {
-        hasHit = 1;
+      if (gint.byteVersion[i] > 0 || beenHit == 1) {
+        beenHit = 1;
         byteVersionLengthGint += 1;
       }
     }
@@ -141,8 +150,6 @@ public class BrobInt {
     }
     return 0;
   }
-
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   *  Method to check if a BrobInt passed as argument is equal to this BrobInt
   *  @param  gint     BrobInt to compare to this
@@ -151,20 +158,18 @@ public class BrobInt {
   *        also using the java String "equals()" method -- THAT was easy, too..........
   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public boolean equals( BrobInt gint ) {
-    return (internalValue.equals( gint.toString() ));
+    return (internalValue.equals(gint.toString() ));
   }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   *  Method to add the value of a BrobIntk passed as argument to this BrobInt using byte array
   *  @param  gint         BrobInt to add to this
   *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public BrobInt add( BrobInt gint ) {
-
     byte localSign = 0;
     byte[] carryArray;
-    byte[] sumArray1;
-    byte[] sumArray2;
+    byte[] sumArrayOne;
+    byte[] sumArrayTwo;
     byte thisSign = this.sign;
     byte gintSign = gint.sign;
     BrobInt output;
@@ -205,12 +210,12 @@ public class BrobInt {
 
       if (gint.byteVersion.length >= this.byteVersion.length) {
         carryArray = new byte[gint.byteVersion.length];
-        sumArray1 = new byte[gint.byteVersion.length];
-        sumArray2 = new byte[gint.byteVersion.length];
+        sumArrayOne = new byte[gint.byteVersion.length];
+        sumArrayTwo = new byte[gint.byteVersion.length];
       } else {
         carryArray = new byte[this.byteVersion.length];
-        sumArray1 = new byte[this.byteVersion.length];
-        sumArray2 = new byte[this.byteVersion.length];
+        sumArrayOne = new byte[this.byteVersion.length];
+        sumArrayTwo = new byte[this.byteVersion.length];
       }
 
       for (int i = 0; i < carryArray.length; i++) {
@@ -218,48 +223,46 @@ public class BrobInt {
       }
 
       for (int i = gint.byteVersion.length - 1; i >= 0; i--) {
-        sumArray1[sumArray1.length - 1 - i] = gint.byteVersion[gint.byteVersion.length - 1 - i];
+        sumArrayOne[sumArrayOne.length - 1 - i] = gint.byteVersion[gint.byteVersion.length - 1 - i];
       }
 
       for (int i = this.byteVersion.length - 1; i >= 0; i--) {
-        sumArray2[sumArray2.length - 1 - i] = this.byteVersion[this.byteVersion.length - 1 - i];
+        sumArrayTwo[sumArrayTwo.length - 1 - i] = this.byteVersion[this.byteVersion.length - 1 - i];
       }
 
       for (int i = carryArray.length - 1; i >= 0; i--) {
-        if (sumArray1[i] + sumArray2[i] + carryArray[i] > 9) {
+        if (sumArrayOne[i] + sumArrayTwo[i] + carryArray[i] > 9) {
           if (i != 0) {
             carryArray[i - 1] = 1;
           }
-          sumArray1[i] = (byte) (sumArray1[i] + sumArray2[i] - 10);
-        } else if (sumArray1[i] + sumArray2[i] + carryArray[i] <= 9) {
-          sumArray1[i] = (byte) (sumArray1[i] + sumArray2[i]);
+          sumArrayOne[i] = (byte) (sumArrayOne[i] + sumArrayTwo[i] - 10);
+        } else if (sumArrayOne[i] + sumArrayTwo[i] + carryArray[i] <= 9) {
+          sumArrayOne[i] = (byte) (sumArrayOne[i] + sumArrayTwo[i]);
         }
       }
 
       for (int i = 0; i < carryArray.length; i++) {
-        // System.out.print(carryArray[i]);
       }
-      // System.out.println();
-
-      for (int i = 0; i < sumArray1.length; i++) {
-        sumArray1[i] = (byte) (sumArray1[i] + carryArray[i]);
+  
+      for (int i = 0; i < sumArrayOne.length; i++) {
+        sumArrayOne[i] = (byte) (sumArrayOne[i] + carryArray[i]);
       }
 
       String byteString = "";
-      int hasHit = 0;
+      int beenHit = 0;
 
       if (localSign == 1) {
         byteString = byteString.concat( "-" );
       }
 
-      for( int i = 0; i < sumArray1.length; i++ ) {
-        if(sumArray1[i] != 0) {
-          hasHit = 1;
+      for( int i = 0; i < sumArrayOne.length; i++ ) {
+        if(sumArrayOne[i] != 0) {
+          beenHit = 1;
         }
-        if (hasHit == 0 && sumArray1[i] == 0) {
+        if (beenHit == 0 && sumArrayOne[i] == 0) {
 
         } else {
-          byteString = byteString.concat( Byte.toString( sumArray1[i] ) );
+          byteString = byteString.concat( Byte.toString( sumArrayOne[i] ) );
         }
       }
 
@@ -304,8 +307,7 @@ public class BrobInt {
       for (int i = this.byteVersion.length - 1; i >= 0; i--) {
         subtractionResult[i] = this.byteVersion[i];
       }
-
-
+      
       for (int i = gint.byteVersion.length - 1; i >= 0; i--) {
         subtractant[(this.byteVersion.length - gint.byteVersion.length) + i] = gint.byteVersion[i];
       }
@@ -330,13 +332,13 @@ public class BrobInt {
           }
         }
         String byteString = "";
-        int hasHit = 0;
+        int beenHit = 0;
 
         for( int i = 0; i < subtractionResult.length; i++ ) {
           if(subtractionResult[i] != 0) {
-            hasHit = 1;
+            beenHit = 1;
           }
-          if (hasHit == 0 && subtractionResult[i] == 0) {
+          if (beenHit == 0 && subtractionResult[i] == 0) {
 
           } else {
             byteString = byteString.concat( Byte.toString( subtractionResult[i] ) );
@@ -379,7 +381,6 @@ public class BrobInt {
       }
     }
   }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   *  Method to multiply the value of a BrobInt passed as argument to this BrobInt
   *  @param  gint         BrobInt to multiply by this
@@ -476,7 +477,6 @@ public class BrobInt {
       return index;
     }
   }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   *  Method to get the remainder of division of this BrobInt by the one passed as argument
   *  @param  gint         BrobInt to divide this one by
@@ -486,14 +486,13 @@ public class BrobInt {
     BrobInt divisionResult = new BrobInt((this.divide(gint)).toString());
     return this.subtract(divisionResult.multiply(gint));
   }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   *  Method to return a String representation of this BrobInt
   *  @return String  which is the String representation of this BrobInt
   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   public String toString() {
     String byteString = "";
-    int hasHit = 0;
+    int beenHit = 0;
 
     if (this.sign == 1) {
       byteString = byteString.concat( "-" );
@@ -501,9 +500,9 @@ public class BrobInt {
 
     for( int i = 0; i < this.byteVersion.length; i++ ) {
       if(this.byteVersion[i] != 0) {
-        hasHit = 1;
+        beenHit = 1;
       }
-      if (hasHit == 0 && this.byteVersion[i] == 0) {
+      if (beenHit == 0 && this.byteVersion[i] == 0) {
 
       } else {
         byteString = byteString.concat( Byte.toString( this.byteVersion[i] ) );
@@ -521,7 +520,6 @@ public class BrobInt {
   public void toArray( byte[] d ) {
     System.out.println( Arrays.toString( d ) );
   }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   *  Method to return a BrobInt given a long value passed as argument
   *  @param  value         long type number to make into a BrobInt
