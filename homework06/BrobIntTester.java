@@ -583,7 +583,7 @@ public class BrobIntTester {
                              "        and got: " + g20.multiply( g19 ) );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
- 
+
       System.out.println( "\n\n    TESTING DIVIDE() METHOD:\n" +
                           "    ========================" );
       System.out.println( "\n      Test 056: Dividing g19 by g20 [56789 / 37]: " );
@@ -616,46 +616,102 @@ public class BrobIntTester {
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
       // testing for collatz
+     
       
-      System.out.println("Starting of Collatz");
+
+      System.out.println( "\n\n    Starting of Collatz:\n" +
+                          "    ============================================================================================================" );
       System.out.println();
-      System.out.println("Collatz for " + g01String);
-      Collatz seq1 = new Collatz(new BrobInt (g01String)); 
+      
+      System.out.println( "\n\n    Collatz for " + g01String+ ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq1 = new Collatz(g01String); 
       seq1.printCollatz();
       seq1 = null;
-      System.out.println("Collatz for " + g02String);
-      Collatz seq2 = new Collatz(new BrobInt(g02String)); 
+      System.out.println( "\n\n    Finished Collatz for " + g01String+ ":\n" +
+                          "    ============================================================================================================" );
+      
+      
+
+      System.out.println( "\n\n    Collatz for " + g02String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq2 = new Collatz(g02String); 
       seq2.printCollatz();
       seq2 = null;
-      System.out.println("Collatz for " + g03String);
-      Collatz seq3 = new Collatz(new BrobInt(g03String)); 
+      System.out.println( "\n\n    Finished Collatz for " + g02String + ":\n" +
+                          "    ============================================================================================================" );
+      
+      
+
+
+      System.out.println( "\n\n    Collatz for " + g03String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq3 = new Collatz(g03String); 
       seq3.printCollatz();
       seq3 = null;
+      System.out.println( "\n\n    Finished Collatz for " + g03String + ":\n" +
+                          "    ============================================================================================================" );
 
-      Collatz seq4 = new Collatz(new BrobInt(g04String)); 
+     
+
+      System.out.println( "\n\n    Collatz for " + g04String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq4 = new Collatz(g04String); 
       seq4.printCollatz();
       seq4 = null;
+      System.out.println( "\n\n    Finished Collatz for " + g04String + ":\n" +
+                          "    ============================================================================================================" );
 
-      Collatz seq5 = new Collatz(new BrobInt(g05String)); 
+
+
+      System.out.println( "\n\n    Collatz for " + g05String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq5 = new Collatz(g05String); 
       seq5.printCollatz();
       seq5 = null;
+      System.out.println( "\n\n    Finished Collatz for " + g05String + ":\n" +
+                          "    ============================================================================================================" );
 
-      Collatz seq6 = new Collatz(new BrobInt(g06String)); 
+
+
+      System.out.println( "\n\n    Collatz for " + g06String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq6 = new Collatz(g06String); 
       seq6.printCollatz();
       seq6 = null;
+      System.out.println( "\n\n    Finished Collatz for " + g06String + ":\n" +
+                          "    ============================================================================================================" );
 
-      Collatz seq7 = new Collatz(new BrobInt(g07String)); 
+      
+
+      System.out.println( "\n\n    Collatz for " + g07String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq7 = new Collatz(g07String); 
       seq7.printCollatz();
       seq7 = null;
+      System.out.println( "\n\n    Finished Collatz for " + g07String + ":\n" +
+                          "    ============================================================================================================" );
+      
+      
 
-      Collatz seq11 = new Collatz(new BrobInt(g11String)); 
+      System.out.println( "\n\n    Collatz for " + g11String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq11 = new Collatz(g11String); 
       seq11.printCollatz();
       seq11 = null;
+      System.out.println( "\n\n    Finished Collatz for " + g11String + ":\n" +
+                          "    ============================================================================================================" );
+      
+     
 
-      Collatz seq12 = new Collatz(new BrobInt(g12String)); 
+      System.out.println( "\n\n    Collatz for " + g12String + ":\n" +
+                          "    ============================================================================================================" );
+      Collatz seq12 = new Collatz(g12String); 
       seq12.printCollatz();
       seq12 = null;
-
+      System.out.println( "\n\n    Finished Collatz for " + g12String + ":\n" +
+                          "    ============================================================================================================" );
+      
       System.exit( 0 );
 
    }
