@@ -1,5 +1,5 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * File name  :  BrobIntTester.java
+ * File name  :  BrobInt.java
  * Purpose    :  Test Harness for the BrobInt java class
  * @author    :  Cristian R. Ornelas
  * Date       :  2019-04-15
