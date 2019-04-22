@@ -2,7 +2,7 @@
  * File name  :  BrobIntTester.java
  * Purpose    :  Test Harness for the BrobInt java class
  * @author    :  B.J. Johnson
- * Date       :  2017-04-05
+ * Date       :  2019-04-24
  * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
  * Notes      :  None
  * Warnings   :  None
