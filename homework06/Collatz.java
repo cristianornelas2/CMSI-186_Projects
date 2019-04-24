@@ -86,8 +86,6 @@ public class Collatz {
 
             BrobInt counter = new BrobInt(one);
             
-            // We simply follow steps 
-            // while we do not reach 1 
 
             while (CollatzNumber.compareTo(one_) > 0 ){ 
 
@@ -103,10 +101,8 @@ public class Collatz {
                 
                 if(lastIndx == 0) break;
 
-                //System.out.println(lastIndx);
                 char msb = r.charAt(lastIndx-1);
 
-                // If n is odd 
                 if (msb == '1' || msb == '3' || msb == '5' || msb == '7' || msb == '9') {
                     
                     CollatzNumber = CollatzNumber.multiply(three_);
@@ -115,16 +111,24 @@ public class Collatz {
                     
                 }
           
-                // If even 
+                 
                 else {
                     
                     CollatzNumber = longDivision(CollatzNumber, 2); 
                     
                 }
-                // Print 1 at the end
+                
                 
                 counter = counter.add(one_);
                 
             } 
+        }
+
+            public static void main(String [] args){
+                if(args.length == 1){
+                    Collatz obj = new Collatz(args[0]);
+                    obj.printCollatz();
+                    obj = null;
+                }
         } 
 }
