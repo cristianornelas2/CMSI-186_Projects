@@ -30,7 +30,7 @@ public static Tuple makeChangeWithDynamicProgramming( int[] denominations, int t
         for (int i = 0; i < denominations.length; i++) {
           String checkInt = Integer.toString(denominations[i]);
           if (denominations[i] < 1) {
-            System.out.println("BAD DATA ----- MUST BE POSITIVE INTEGER");
+            System.out.println("BAD DATA ----- MUST BE POSITIVE INTEGER GREATER THAN ZERO");
             System.exit(-1);
           }
         }
