@@ -9,7 +9,7 @@ This repository hosts a public copy of the assignment write-ups for this course 
 **Assignments**
 - Homework-[00](https://github.com/cristianornelas2/CMSI-186_Projects/tree/master/homework00)
 - Homework-[01](https://github.com/cristianornelas2/CMSI-186_Projects/tree/master/homework01)
-- Homework-[02](https://github.com/cristianornelas2/CMSI-186_Projects/tree/master/Homework02)
+- Homework-[02](https://github.com/cristianornelas2/CMSI-186_Projects/tree/master/homework02)
 - Homework-[03](https://github.com/cristianornelas2/CMSI-186_Projects/tree/master/Homework03)
 - Homework-[04](https://github.com/cristianornelas2/CMSI-186_Projects/tree/master/Homework04)
 - Homework-[05](https://github.com/cristianornelas2/CMSI-186_Projects/tree/master/homework05)
